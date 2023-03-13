@@ -2,8 +2,14 @@
 Scanning Best Practices:
 
 loading
-
 byte value thats basically a bool, 1 while loading and 0 in game
+
+mainmenu
+1 on MM, 38 on transition into game. random numbers on transition back into main menu
+
+Y pos
+Floor 1 == 1.813140083E-41
+Floor 12 == 3.154322843E-41
 */
 
 state("DudeSimulator5")
@@ -42,6 +48,18 @@ start
 {
     return current.mainmenu == 38 && old.mainmenu != 38;
 }
+
+/*
+split
+{
+    return 
+    current.mainmenu == 133 && old.mainmenu != 133 ||
+    current.mainmenu == 134 && old.mainmenu != 134 || 
+    current.mainmenu == 137 && old.mainmenu != 137;
+    //find value for quitting from trash bag
+
+}
+*/
 
 update
 {
